@@ -15,7 +15,7 @@ gem 'pg'
 # Getting RSpotify involved
 gem 'rspotify'
 # Hit the place up with some bootstrap thang
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

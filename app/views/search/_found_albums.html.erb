@@ -1,0 +1,10 @@
+<% @searchresultalbum.each do |album| %>
+    <div id="album-wrapper">
+      <div id="album-image">
+        <%= image_tag(album.image, :alt => album.name, :size => '50x50') %>
+      </div>
+      <div id="album-info">
+        <%= link_to album.name, new_searchresultalbum_album_path(album.id) %> - <%= link_to album.artists, album.ext_url %>
+      </div>
+    </div>
+<% end %>

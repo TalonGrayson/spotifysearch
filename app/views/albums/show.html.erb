@@ -1,0 +1,30 @@
+
+<div class="center jumbotron">
+  <h1><%= @searchresultalbum.artists %> - <%= @searchresultalbum.name %></h1>
+  <div class="center">
+    <%= link_to image_tag(@searchresultalbum.image, :alt => @searchresultalbum.name, :size => '240x240'), @searchresultalbum.ext_url %>
+  </div>
+  <div class="container">
+
+    <% @searchresultalbum.tracks.each do |t| %>
+
+      <div id="track-wrapper">
+
+        <div id="track-number">
+          <%= t.track_number %>
+        </div>
+        <div id="track-name">
+          <%= link_to t.name, t.ext_url, target: :_blank %>
+        </div>
+        <div id="track-play">
+          <%= link_to 'Play', t.ext_url, target: :_blank %>
+        </div>
+        <div id="track-length">
+          <%= Time.at(t.track_duration.to_i/1000).utc.strftime("%M:%S") %>
+        </div>
+
+      </div>
+
+    <% end %>
+  </div>
+</div>
